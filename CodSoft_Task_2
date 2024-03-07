@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class CodSoft_Task_2 {
+    public void grade_Calculator(){
+        Scanner scanner_object = new Scanner(System.in);
+        float marks[] = new float[5];
+        double total_marks = 0.0;
+        for(int i = 0; i < marks.length; i++){
+            System.out.print("Enter the marks of " + (i+1) + " subject out of 100: ");
+            marks[0] = scanner_object.nextFloat();
+            total_marks += marks[0];
+            if (marks[0] > 100 || marks[0] < 0) {
+                System.out.println("Invalid marks entered!!!");
+                return;
+            }
+        }
+        double average_percentage = total_marks/5;
+        String grade;
+        if (average_percentage > 90) {
+            grade = "Outstanding";
+        } else if (average_percentage > 80 && average_percentage <= 90) {
+            grade = "A";
+        } else if (average_percentage > 70 && average_percentage <= 80) {
+            grade = "B";
+        } else if (average_percentage > 60 && average_percentage <= 70) {
+            grade = "C";
+        } else if (average_percentage > 50 && average_percentage <= 60) {
+            grade = "D";
+        } else if (average_percentage > 40 && average_percentage <= 50) {
+            grade = "E";
+        }
+        else{
+            grade = "Fail";
+        }
+        System.out.println("Total marks obtained: " + total_marks);
+        System.out.println("Average percentage: " + average_percentage);
+        System.out.println("Grade: " + grade);
+    }
+    public static void main(String[] args) {
+        CodSoft_Task_2 class_object = new CodSoft_Task_2();
+        class_object.grade_Calculator();
+    }
+}
