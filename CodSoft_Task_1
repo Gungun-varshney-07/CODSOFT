@@ -1,0 +1,33 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class CodeSoft_Task_1 {
+    public void guessNumber(){
+        int guessed_number;
+        Scanner scanner_object = new Scanner(System.in);
+        Random random_number = new Random();
+        int random_number_generated = random_number.nextInt(1,100);
+        while(true){
+            System.out.println("Guess a number from 1 to 100: ");
+            guessed_number = scanner_object.nextInt();
+            if(guessed_number < 1 || guessed_number > 100){
+                System.out.println("Invalid number guessed!!!");
+                return;
+            }
+            if(guessed_number == random_number_generated){
+                System.out.println("Yeah! You guessed it right.\n");
+                break;
+            }
+            else if(guessed_number < random_number_generated){
+                System.out.println("Your guess is too low than the number.\n");
+            }
+            else if(guessed_number > random_number_generated){
+                System.out.println("Your guess is too high than the number.\n");
+            }
+        }
+    }
+    public static void main(String[] args) {
+        CodeSoft_Task_1 class_object = new CodeSoft_Task_1();
+        class_object.guessNumber();
+    }
+}
