@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class CodSoft_Task_3 {
+    public double balance = 50000;
+
+    public void ATM_machine(){
+        Scanner scanner_object = new Scanner(System.in);
+        while(true){
+            System.out.println("""
+                    1. Press W or w for withdrawing money
+                    2. Press D or d for depositing money
+                    3. Press C or c to Check your account balance
+                    4. Press Q or q to exit
+                    5. Enter your choice:
+                    """);
+            String choice_string = scanner_object.next();
+            char choice_char = choice_string.charAt(0);
+            if(choice_char == 'W' || choice_char == 'w'){
+                System.out.println("Enter the amount you want to withdraw: ");
+                double amount = scanner_object.nextDouble();
+                withdraw(amount);
+                System.out.println("Amount has been withdrawn successfully!");
+            }
+            else if(choice_char == 'D' || choice_char == 'd'){
+                System.out.println("Enter the amount you want to deposit: ");
+                double amount = scanner_object.nextDouble();
+                deposit(amount);
+                System.out.println("Amount has been deposited successfully!");
+            }
+            else if(choice_char == 'C' || choice_char == 'c'){
+                System.out.println("Balance: " + balance);
+            }
+            else if(choice_char == 'Q' || choice_char == 'q'){
+                break;
+            }
+        }
+    }
+    public void withdraw(double amount){
+        balance = balance - amount;
+    }
+    public void deposit(double amount){
+        balance = balance + amount;
+    }
+
+    public static void main(String[] args) {
+        CodSoft_Task_3 class_object = new CodSoft_Task_3();
+        class_object.ATM_machine();
+    }
+}
