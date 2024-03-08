@@ -3,14 +3,14 @@ import java.util.Random;
 
 public class CodeSoft_Task_1 {
     public void guessNumber(){
-        int guessed_number;
+        int guessed_number;           //This variable will store the input of the user
         Scanner scanner_object = new Scanner(System.in);
         Random random_number = new Random();
-        int random_number_generated = random_number.nextInt(1,100);
+        int random_number_generated = random_number.nextInt(1,100);          //This variable will store the random number generated from 1 to 100
         while(true){
             System.out.println("Guess a number from 1 to 100: ");
             guessed_number = scanner_object.nextInt();
-            if(guessed_number < 1 || guessed_number > 100){
+            if(guessed_number < 1 || guessed_number > 100){                //This condition will check if the user has entered a number which is out of range(1-100)
                 System.out.println("Invalid number guessed!!!");
                 return;
             }
