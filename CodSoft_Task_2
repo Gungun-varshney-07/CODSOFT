@@ -3,30 +3,38 @@ import java.util.Scanner;
 public class CodSoft_Task_2 {
     public void grade_Calculator(){
         Scanner scanner_object = new Scanner(System.in);
-        float marks[] = new float[5];
+        float marks[] = new float[5];                 //This array will store the marks of all the subjects
         double total_marks = 0.0;
         for(int i = 0; i < marks.length; i++){
             System.out.print("Enter the marks of " + (i+1) + " subject out of 100: ");
             marks[0] = scanner_object.nextFloat();
             total_marks += marks[0];
-            if (marks[0] > 100 || marks[0] < 0) {
+            if (marks[0] > 100 || marks[0] < 0) {                //This condition will make sure the user doesn't enter negative marks or marks greater than 100
                 System.out.println("Invalid marks entered!!!");
                 return;
             }
         }
-        double average_percentage = total_marks/5;
+        double average_percentage = total_marks/5;              //This variable will store the average percentage calculated
         String grade;
-        if (average_percentage > 90) {
+        if (average_percentage > 95) {
             grade = "Outstanding";
-        } else if (average_percentage > 80 && average_percentage <= 90) {
-            grade = "A";
-        } else if (average_percentage > 70 && average_percentage <= 80) {
+        }
+        else if (average_percentage > 90 && average_percentage <= 95) {
+            grade = "A+";
+        }
+        else if (average_percentage > 80 && average_percentage <= 90) {
+                grade = "A";
+        }
+        else if (average_percentage > 70 && average_percentage <= 80) {
             grade = "B";
-        } else if (average_percentage > 60 && average_percentage <= 70) {
+        }
+        else if (average_percentage > 60 && average_percentage <= 70) {
             grade = "C";
-        } else if (average_percentage > 50 && average_percentage <= 60) {
+        }
+        else if (average_percentage > 50 && average_percentage <= 60) {
             grade = "D";
-        } else if (average_percentage > 40 && average_percentage <= 50) {
+        }
+        else if (average_percentage > 40 && average_percentage <= 50) {
             grade = "E";
         }
         else{
